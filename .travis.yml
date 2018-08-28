@@ -1,6 +1,9 @@
 sudo: true
 dist: trusty
 
+branches:
+  only:
+    - master
 env:
   global:
     - IMAGE_BASE_PATH="./config/docker/image/"
