@@ -1,0 +1,20 @@
+sudo: true
+dist: trusty
+
+env:
+  global:
+    - IMAGE_BASE_PATH="./config/docker/image/"
+jobs:
+  include:
+    - stage: build php docker images
+      env:
+        - image: php
+        - dockerhub-repo: danielozano/automatic-php
+      script:
+        - ./build.sh
+    - stage: build nginx images
+      env:
+        - image: nginx
+        - dockerhub-repo: danielozano/automatic-nginx
+      script:
+        - ./build.sh
