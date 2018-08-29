@@ -1,6 +1,7 @@
 sudo: true
 dist: trusty
 
+if: (branch = master) && (type = push)
 branches:
   only:
     - master
